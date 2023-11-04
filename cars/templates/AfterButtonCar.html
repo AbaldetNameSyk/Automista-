@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automista</title>
+</head>
+<body>
+<header>
+    <h1 style="margin-left: 800px" >Automista</h1>
+    </header>
+<div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); border: 1px solid grey; height: 300px">
+    <h1>Выберете какая машина вам по вкусу:</h1>
+  <select style="margin-left: 100px" class="form-select" aria-label="Default select example">
+  <option selected>Нажмите сюда для выбора автомобиля по душе</option>
+  <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+      <optgroup label="Audi">
+    <option value="A1">A1</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+  </optgroup>
+  <optgroup label="BMW">
+    <option value="X3">X3</option>
+    <option value="X5">X5</option>
+    <option value="X7">X7</option>
+  </optgroup>
+  <optgroup label="Chery">
+    <option value="Tiggo 4">Tiggo 4</option>
+    <option value="Tiggo 7">Tiggo 7</option>
+    <option value="Arrizo 6">Arrizo 6</option>
+  </optgroup>
+</select>
+
+    <div style="margin-left: 100px; margin-top: 20px" class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Введите сюда свою почту</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+        <br>
+    <div style="margin-left: 100px; margin-top: 20px" class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">Введите сюда cвой номер телефона</label>
+  <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="+380...">
+</div>
+        <br>
+<div style="margin-left: 100px" class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Хотели бы вы узнавать о новостях мира автомобилей?
+      <br>Если ваш ответ да то подпишитесь на нашу рассылку
+  </label>
+    <br>
+</div>
+    <a href="{% url 'cars:Obrob_page' %}" style="text-decoration: none; background-color: grey; color: black; border: 1px solid grey; margin-left: 250px" onclick="openApplication();">Подать заявку</a>
+    </div>
+</body>
+</html>
