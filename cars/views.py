@@ -1,5 +1,10 @@
-from django.shortcuts import render
-from .models import Car
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from .forms import CustomUserCreationForm
+from django.views.generic import CreateView
+from .forms import CarForm
+from .models import Car, CustomUser
+
 
 def bmw_page(request):
     return render(request, 'BMW.html')
@@ -70,7 +75,7 @@ def my_view(request):
 
 def car_list(request):
     cars = Car.objects.all()
-    return render(request, 'cars/car_list.html', {'cars': cars})
+    return render(request, 'cars/index.html', {'cars': cars})
 
 def car_detail(request, car_id):
     car = Car.objects.get(pk=car_id)
@@ -81,3 +86,58 @@ def AfterButton_page(request):
 
 def Obrob_page(request):
     return render(request, 'ObrabotkaDannih.html')
+
+def CarForm_page(request):
+    return render(request, 'car_form.html')
+
+
+
+def car_form(request):
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = CarForm()
+
+    return render(request, 'car_form.html', {'form': form})
+
+
+def car_create(request):
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('cars:car_list')  #
+    else:
+        form = CarForm()
+
+    return render(request, 'car_form.html', {'form': form})
+
+
+
+
+
+def registration_page(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('some-success-url')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration_page.html', {'form': form})
+
+
+class CarCreateView(CreateView):
+    model = Car
+    form_class = CarForm
+    template_name = 'car_form.html'
+    success_url = '/cars/car/list/'
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+

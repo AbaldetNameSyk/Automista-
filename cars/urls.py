@@ -1,5 +1,8 @@
-from django.urls import path
 from . import views
+from .views import CarCreateView, car_list
+from django.urls import path
+from .views import car_form
+from .views import registration_page
 
 app_name = 'cars'
 
@@ -29,5 +32,9 @@ urlpatterns = [
     path('che/', views.che_page, name='che_page'),
     path('dac/', views.dac_page, name='dac_page'),
     path('AfterButton/', views.AfterButton_page, name='AfterButton_page'),
-    path('Obrob/', views.Obrob_page, name='Obrob_page'),
+    path('CarForm/', views.CarForm_page, name='car_form_page'),
+    path('create/', CarCreateView.as_view(), name='car_create'),
+    path('car_form/', car_form, name='car_form'),
+    path('car/list/', car_list, name='car_list'),
+    path('registration/', registration_page, name='registration_page'),
 ]
